@@ -14,3 +14,9 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=ff0000&height=230&section=header&text=sohee%20lee&fontSize=70" />
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=thgmldl0115)](https://github.com/anuraghazra/github-readme-stats)
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=ff0000&height=230&section=footer&text=&fontSize=" />
