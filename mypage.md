@@ -27,8 +27,7 @@
 **26일 :** &nbsp; mypage.md 작성 시작<br>
 > 오전 : spring 설치 <br> 
 오후 : github( github.io 작성. sourcetree, branch ), chart 그리기<br>
-<br>
-야간에 남아 자습함. 마저 github.io 작성하고 vscode와 github 동기화. <br>
+<br>야간에 남아 자습함. 마저 github.io 작성하고 vscode와 github 동기화. <br>
 spld : (유선배) 기출변형 모의고사 1회차 (채점까지만)
 
 **27일 :** &nbsp; 해커톤 예선 참가 명단 발표 (결과 : 예선 진출)
