@@ -25,7 +25,7 @@
 **6일 :** &nbsp; 세미나 발표, 회식<br>
 **17일 :** &nbsp; spld 공부 시작(유선배)<br>
 **26일 :** &nbsp; mypage.md 작성 시작<br>
-> 오전 : >>spring 설치 <br> 
+> 오전 : spring 설치 <br> 
 오후 : github( github.io 작성. sourcetree, branch ), chart 그리기<br>
 <br>
 야간에 남아 자습함. 마저 github.io 작성하고 vscode와 github 동기화. <br>
