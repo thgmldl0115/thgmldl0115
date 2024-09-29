@@ -40,7 +40,7 @@ spld : (유선배) 기출변형 모의고사 1회차 (채점까지만)
 >> 주말에 해커톤 신청서 살펴보고 일정 계획 참고해서 남은기간 러프하게 계획 짜둘것. <br> 코딩테스트 준비해야함 <br> 정처기 필기 강의 계획 <br> 개인프로젝트 데이터 테이블 설계 필요
 
 **29일 :** &nbsp;
-> 프로그래머스 코딩테스트 연습 0단계<br> - import java.util.Arrays; <br> - java 배열 정렬 : Arrays.sort(배열); <br> - java 배열 자르기 : Arrays.copyOfRange(배열, 시작인덱스, 끝인덱스) <br> - java : 문자열.length();, 배열.length; <br> - java : 문자열 비교 "c".compareTo("f"); // -3 (아스키코드 : c = 99, f =102) <br> - java : 정규식 기억해두기 (String answer = myString.replaceAll("[a-k]", "l");)
+> 프로그래머스 코딩테스트 연습 0단계<br> - import java.util.Arrays; <br> - java 배열 정렬 : Arrays.sort(배열); <br> - java 배열 자르기 : Arrays.copyOfRange(배열, 시작인덱스, 끝인덱스) <br> - java : 문자열.length();, 배열.length; <br> - java : 문자열 비교 "c".compareTo("f"); // -3 (아스키코드 : c = 99, f =102) <br> - java : 정규식 기억해두기 (String answer = myString.replaceAll("[a-k]", "l");) <br> - java : 배열과 리스트 비교. 둘 다 활용하기.
 
 
 **독서 목록**
