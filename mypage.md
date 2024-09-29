@@ -41,6 +41,8 @@ spld : (유선배) 기출변형 모의고사 1회차 (채점까지만)
 
 **29일 :** &nbsp;
 > 프로그래머스 코딩테스트 연습 0단계<br> - import java.util.Arrays; <br> - java 배열 정렬 : Arrays.sort(배열); <br> - java 배열 자르기 : Arrays.copyOfRange(배열, 시작인덱스, 끝인덱스) <br> - java : 문자열.length();, 배열.length; <br> - java : 문자열 비교 "c".compareTo("f"); // -3 (아스키코드 : c = 99, f =102) <br> - java : 정규식 기억해두기 (String answer = myString.replaceAll("[a-k]", "l");) <br> - java : 배열과 리스트 비교. 둘 다 활용하기.
+> <br>
+>> import java.util.ArrayList; <br> ArrayList<String> a = new ArrayList<>();
 
 
 **독서 목록**
