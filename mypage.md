@@ -50,7 +50,8 @@ spld : (유선배) 기출변형 모의고사 1회차 (채점까지만)
 > - java : 배열과 리스트 비교. 둘 다 활용하기.
 >> import java.util.ArrayList; <br> ArrayList<String> a = new ArrayList<>(); 
 > - java : split 마지막 값이 빈 값일 경우, 그 값도 배열에 포함시키는 방법
->> String[] li = myString.split("x", -1); <br>
+>> String[] li = myString.split("x", -1);
+
 > 코딩 기초 프로그램 64% 달성
 
 **30일 :** &nbsp;
