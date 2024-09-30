@@ -50,8 +50,34 @@ spld : (유선배) 기출변형 모의고사 1회차 (채점까지만)
 > - java : 배열과 리스트 비교. 둘 다 활용하기.
 >> import java.util.ArrayList; <br> ArrayList<String> a = new ArrayList<>(); 
 > - java : split 마지막 값이 빈 값일 경우, 그 값도 배열에 포함시키는 방법
->> String[] li = myString.split("x", -1);
+>> String[] li = myString.split("x", -1); <br>
+> 코딩 기초 프로그램 64% 달성
 
+**30일 :** &nbsp;
+> 오전 : spring, 게시판, 댓글 DB 테이블 생성. 게시판 수정까지. <br>
+> 오후 : (데이터 분석 및 활용) jupyter, pandas, colab
+```
+1. 설치(tech7에서)
+conda install -c conda-forge jupyter lab
+2. 설치(tech7에서)
+pip install ipykernel
+3. 설정(tech7에서)
+python -m ipykernel install --user --name tech -- display-name "tech7"
+4.가상환경 비활성화
+conda deactivate
+5.실행(base에서)
+jupyter lab
+((base) C:\dev\PycharmProject\pythonProject>jupyter lab)
+
+conda activate tech7
+pip install -U finance-datareader
+pip install matplotlib
+pip install plotly
+
+(tech7) C:\Users\202-16>pip install openpyxl
+
+파이썬 데이터 분석 (관련 소스)https://github.com/youngwoos/Doit_Python/
+```
 
 **독서 목록**
  - 스노볼 드라이브 (조예은)
