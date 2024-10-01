@@ -85,5 +85,16 @@ pip install plotly
  - 돌봄, 동기화, 자유 (무라세 다카오)
 
 ## 2024.10
+**1일 :** 
+> 프로그래머스 코딩테스트 연습 0단계
+> - import java.util.Collections;
+> - import java.lang.Math;
+> - java : 리스트 정렬 Collections.min(list); (배열정렬은 Arrays.sort(배열);)
+> - java : Collections.reverse(list);
+> - java : (string 타입의 문자열).charAt(index); -> char타입 한글
+> - java : 문자열.lastIndexOf(하위문자열); -> 문자열의 하위 문자열이 마지막으로 나타나는 위치 반환
+> - java : Arrays.eqauls(배열a, 배열b); ->  a와 b의 인덱스들을 모두 비교
+> - java : stack (후입선출) 값추가: add(), push() / 값제거: pop() / 마지막 요소 : peek()
+
 **2일 :** &nbsp; 14:00 해커톤 오리엔테이션 <br>
 **4일 :** &nbsp; 코딩테스트 1차
