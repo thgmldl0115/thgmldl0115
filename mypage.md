@@ -125,5 +125,27 @@ class Solution {
     }
 }
 ```
+> - java : 배열을 리스트로, 리스트를 배열로
+```
+// 1. 원본 배열
+Integer[] arr = { 1, 2, 3, 4, 5 };
+// 2. 원본 배열을 List로 변환
+List<Integer> list = Arrays.asList(arr);
+// 3. Collections.reverse() 메소드를 사용하여 list를 거꾸로 변환
+Collections.reverse(list);
+// 4. 리스트를 배열로 변환
+Integer[] reverseArr = list.toArray(arr);
+
+```
+> - java : 실수를 정수로 변환. int answer = (int) Math.floor(d);
+>> 유클리드 호제법 (암호화및실습 코드)
+```
+def GCD(a,b):
+    dividend = a  
+    divisor = b  
+    while divisor:   # 만약 변수 divisor가 0이 아닌 한 반복수행
+        dividend, divisor = divisor, dividend % divisor
+    return abs(dividend)
+```
 
 **4일 :** &nbsp; 코딩테스트 1차
