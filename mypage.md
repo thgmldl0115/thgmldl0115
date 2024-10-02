@@ -101,5 +101,29 @@ pip install plotly
 **2일 :** &nbsp; 13:40 해커톤 오리엔테이션 (10:00 행정실) <br>
 > 해커톤
 >> 노션만들기, 멘토 우선순위, 구현 우선순위 만들기 (오늘안에), 대략적인 계획 세우기, 주말 안에 기획서 1차 완성하기
+> 프로그래머스 코딩테스트 연습 0단계
+> - java : 배열 만들기 2
+```
+import java.util.*;
+class Solution {
+    public int[] solution(int l, int r) {
+        List<Integer> list = new ArrayList<>();
+        String regx = "^[^12346789]*$";
+        for (int i = l; i <= r; i++) {
+            if (String.valueOf(i).matches(regx)) {
+                list.add(i);
+            }
+        }
+        if (list.size() > 0) {
+            int[] result = new int[list.size()];
+            for (int i = 0; i < list.size(); i++) {
+                result[i] = list.get(i);
+            }
+            return result;
+        }
+        return new int[]{-1};
+    }
+}
+```
 
 **4일 :** &nbsp; 코딩테스트 1차
