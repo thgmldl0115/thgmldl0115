@@ -141,11 +141,14 @@ Integer[] reverseArr = list.toArray(arr);
 >> 유클리드 호제법 (암호화및실습 코드)
 ```
 def GCD(a,b):
-    dividend = a  
-    divisor = b  
-    while divisor:   # 만약 변수 divisor가 0이 아닌 한 반복수행
-        dividend, divisor = divisor, dividend % divisor
-    return abs(dividend)
+    dividend = a # 첫번째 피제수는 a.
+    divisor = b # 첫번째 제수는 b.
+    while divisor != 0:   # != 은 "같지 않다"를 의미
+        quotient = dividend // divisor
+        remainder = dividend % divisor
+        dividend = divisor  
+        divisor = remainder
+    return abs(dividend)  #  GCD는 양수이므로 절대값 명령어 abs()를 사용
 ```
 
 **4일 :** &nbsp; 코딩테스트 1차
