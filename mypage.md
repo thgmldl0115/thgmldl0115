@@ -150,5 +150,35 @@ def GCD(a,b):
         divisor = remainder
     return abs(dividend)  #  GCD는 양수이므로 절대값 명령어 abs()를 사용
 ```
+> - java : 분수의 덧셈
+```
+class Solution {
+    public int[] solution(int numer1, int denom1, int numer2, int denom2) {
+   
+        // 통분하여 더하기
+        int denom = denom1 * denom2;
+        int numer = numer1 * denom2 + numer2 * denom1;
+        
+        // 최대공약수 구하기
+        int dividend = (denom>numer)? denom: numer; 
+        int divisor = (denom>numer)? numer: denom; 
+        int gcd = 0;
+        while(divisor != 0){   
+            int quotient = dividend / divisor;
+            int remainder = dividend % divisor;
+            dividend = divisor;
+            divisor = remainder;
+        }
+        gcd = Math.abs(dividend);
+        
+        // 약분하기
+        int finalden = denom / gcd;
+        int finalnum = numer / gcd;
+        int[] answer = {finalnum, finalden};
+        
+        return answer;
+    }
+}
+```
 
 **4일 :** &nbsp; 코딩테스트 1차
