@@ -89,7 +89,7 @@ pip install plotly
 > 개인프로젝트 : DB 설계, 데이터 수집
 
 **3일 :** &nbsp; 09:00 해커톤 멘토링 신청
-> python 스킬체크 level.1 풀기
+> python 스킬체크 level.1 풀이완료 (50/100, 100/100)
 > 코테 준비 레포지토리 - python.md 생성
 
 **4일 :** &nbsp; 코딩테스트 1차
