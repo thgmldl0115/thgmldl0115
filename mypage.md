@@ -95,3 +95,11 @@ pip install plotly
 **4일 :** &nbsp; 코딩테스트 1차
 > 오전 : 스프링, pw암호화, 프로필 이미지 업로드/수정
 > 오후 : 코딩테스트 
+
+**6일 :** &nbsp; 해커톤 기획서 초안 작성
+
+**7일 :** &nbsp; 해커톤 기획서 초안 작성
+> 오전 : 스프링. DB-SelectBox-화면출력. rest api. pycharm과 연결하여 db insert, delect
+> 오후 :
+
+**9일 :** &nbsp; 10:00 해커톤 1차 멘토링
