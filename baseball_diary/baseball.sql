@@ -17,7 +17,7 @@ CREATE TABLE tb_mem (
     ,update_dt DATE DEFAULT SYSDATE
     ,create_dt DATE DEFAULT SYSDATE
 );
-DROP TABLE tb_mem;
+--DROP TABLE tb_mem;
 SELECT * FROM tb_mem;
 
 SELECT mem_id
@@ -62,21 +62,24 @@ ORDER BY A.COLUMN_ID;
     날짜 및 경기시간, 홈팀, 홈팀점수, 원정팀, 원정팀점수, 경기장소, 비고(ex.우천취소 여부)
     => 계층쿼리로??
     혹은 그냥 데이터를 한 테이블에 넣기... <- 이쪽이 훨씬 간편할듯
-    샘플데이터 : 2023, 2024 두 시즌만!
+    샘플데이터 : 2023, 2024
 */
 CREATE TABLE tb_kbo (
      game_day DATE
-    ,home_team VARCHAR2(20)
-    ,home_team_score VARCHAR2(5) DEFAULT '-'
     ,away_team VARCHAR2(20)
     ,away_team_score VARCHAR2(5) DEFAULT '-'
+    ,home_team VARCHAR2(20)
+    ,home_team_score VARCHAR2(5) DEFAULT '-'
     ,game_space VARCHAR2(10)
     ,game_note VARCHAR2(20) DEFAULT '-'
 );
 
+--DROP TABLE tb_kbo;
+
 ALTER TABLE tb_kbo ADD CONSTRAINT pk_kbo PRIMARY KEY(game_day, home_team);
 
-SELECT * FROM tb_kbo;
+SELECT * FROM tb_kbo
+ORDER BY game_day;
 
 --CREATE FUNCTION is_date(p_string VARCHAR2, p_format VARCHAR2)
 --    RETURN NUMBER 
@@ -100,11 +103,8 @@ SELECT VALIDATE_CONVERSION('2024-09-30' AS DATE, 'YYYY-MM-DD')
   FROM DUAL;
 
 SELECT *
-FROM tb_kbo
-WHERE
---home_team = 'NC'
---AND 
-game_day = TO_DATE('2024-09-30 18:30', 'YYYY-MM-DD HH24:MI');
+FROM tb_kbo;
+WHERE TO_CHAR(game_day,'YYYY-MM-DD') = '2024-03-23';
 
 commit;
 /*
@@ -135,9 +135,9 @@ ALTER TABLE tb_diary ADD CONSTRAINT fk2_diary
 FOREIGN KEY(game_day, home_team) REFERENCES tb_kbo(game_day, home_team);
 
 INSERT INTO tb_diary(mem_id, game_day, home_team, diary_title, diary_content)
-VALUES ('admin', TO_DATE('2024.09.28 17:00', 'YYYY.MM.DD HH24:MI'), 'KIA', '테스트', '테스트 글입니다.');
+VALUES ('admin', TO_DATE('2024.09.28 17:00', 'YYYY.MM.DD HH24:MI'), '롯데', '테스트', '테스트 글입니다.');
 INSERT INTO tb_diary(mem_id, game_day, home_team, diary_title, diary_content)
-VALUES ('admin', TO_DATE('2024-09-30 18:30', 'YYYY-MM-DD HH24:MI'), 'NC', '0930', '0930');
+VALUES ('admin', TO_DATE('2024-09-30 18:30', 'YYYY-MM-DD HH24:MI'), 'KIA', '0930제목', '0930내용');
 
 SELECT * FROM tb_diary;
 
@@ -169,6 +169,82 @@ AND   b.mem_id = 'admin';
 
 commit;
 
-
-
-
+--20240901 HTSS 02024
+	SELECT 	 game_day
+            ,TO_CHAR(game_day,'YYYYMMDD')  || 
+             CASE WHEN away_team = 'LG' THEN 'LG'
+                  WHEN away_team = 'KT' THEN 'KT'
+                  WHEN away_team = 'SSG' THEN 'SK'
+                  WHEN away_team = 'NC' THEN 'NC'
+                  WHEN away_team = '두산' THEN 'OB'
+                  WHEN away_team = 'KIA' THEN 'HT'
+                  WHEN away_team = '롯데' THEN 'LT'
+                  WHEN away_team = '삼성' THEN 'SS'
+                  WHEN away_team = '한화' THEN 'HH'
+                  WHEN away_team = '키움' THEN 'WO'
+             END ||
+             CASE WHEN home_team = 'LG' THEN 'LG'
+                  WHEN home_team = 'KT' THEN 'KT'
+                  WHEN home_team = 'SSG' THEN 'SK'
+                  WHEN home_team = 'NC' THEN 'NC'
+                  WHEN home_team = '두산' THEN 'OB'
+                  WHEN home_team = 'KIA' THEN 'HT'
+                  WHEN home_team = '롯데' THEN 'LT'
+                  WHEN home_team = '삼성' THEN 'SS'
+                  WHEN home_team = '한화' THEN 'HH'
+                  WHEN home_team = '키움' THEN 'WO'
+             END || 
+             '0'|| TO_CHAR(game_day,'YYYY') AS code
+            ,away_team
+            ,away_team_score
+            ,home_team
+            ,home_team_score
+            ,game_space
+            ,game_note
+	FROM tb_kbo
+	WHERE TO_CHAR(game_day,'YYYY-MM-DD') = '2024-09-21';
+    
+SELECT game_day
+    ,  yymm || away ||home || cnt || yy  as code
+    ,  away_team
+    ,  home_team
+    ,  home_team_score
+    ,  game_space
+    ,  game_note
+FROM (
+  SELECT     game_day
+            ,TO_CHAR(game_day,'YYYYMMDD') as yymm
+            ,CASE WHEN away_team = 'LG' THEN 'LG'
+                  WHEN away_team = 'KT' THEN 'KT'
+                  WHEN away_team = 'SSG' THEN 'SK'
+                  WHEN away_team = 'NC' THEN 'NC'
+                  WHEN away_team = '두산' THEN 'OB'
+                  WHEN away_team = 'KIA' THEN 'HT'
+                  WHEN away_team = '롯데' THEN 'LT'
+                  WHEN away_team = '삼성' THEN 'SS'
+                  WHEN away_team = '한화' THEN 'HH'
+                  WHEN away_team = '키움' THEN 'WO'
+              END as away
+             ,CASE WHEN home_team = 'LG' THEN 'LG'
+                  WHEN home_team = 'KT' THEN 'KT'
+                  WHEN home_team = 'SSG' THEN 'SK'
+                  WHEN home_team = 'NC' THEN 'NC'
+                  WHEN home_team = '두산' THEN 'OB'
+                  WHEN home_team = 'KIA' THEN 'HT'
+                  WHEN home_team = '롯데' THEN 'LT'
+                  WHEN home_team = '삼성' THEN 'SS'
+                  WHEN home_team = '한화' THEN 'HH'
+                  WHEN home_team = '키움' THEN 'WO'
+             END as home
+             , TO_CHAR(game_day,'YYYY') AS yy
+            ,away_team
+            ,away_team_score
+            ,home_team
+            ,home_team_score
+            ,game_space
+            ,game_note
+            ,CASE WHEN COUNT(*) OVER(PARTITION BY away_team||home_team) >1 THEN TO_CHAR(ROW_NUMBER() OVER(PARTITION BY away_team||home_team ORDER BY game_day ASC))  
+             ELSE '0' END  as cnt
+   FROM tb_kbo
+   WHERE TO_CHAR(game_day,'YYYY-MM-DD') = '2024-09-21'
+   );
