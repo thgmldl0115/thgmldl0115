@@ -219,6 +219,14 @@ pip install plotly
 - pdf보면서 뭔가 따라하긴했는데 db연결이안되니까 한계가있음... 화면만보는중 ㅠㅠ
 - 변경사항 github 연동 완료...
 
+**21일 :**
+- db연결 안된 이유... DAO를 Dao라고해서...
+- diary list 본인것만 조회
+- diaryWirteView gameday input type=date
+- code db조회시 생성
+- 일기 작성시 날짜 선택 - 경기 선택 - 라인업 아코디언으로 출력
+- 내일 할일 : 오늘한걸 스코어보드편으로...
+
 
 **25일 :** &nbsp; 개인프로젝트 발표
 
