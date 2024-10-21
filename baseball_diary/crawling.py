@@ -55,24 +55,24 @@ trs = soup.select('#tblScheduleList tbody tr')
 
 game_day1 = '2024.01.01'
 for tr in trs:
-    home_team = '-'
-    home_team_score = '-'
     away_team = '-'
     away_team_score = '-'
+    home_team = '-'
+    home_team_score = '-'
     tds = tr.find_all('td')
     for td in tds:
         cls = td.get('class')
         if cls == ['day']:
-            game_day1 = '2024.' + td.text[:5] + ' '
+            game_day1 = '2023.' + td.text[:5] + ' '
         if cls == ['time']:
             game_day = game_day1 + td.text
         if cls == ['play']:
             spans = td.find_all('span')
             if len(spans) == 5:
-                home_team = spans[0].text
-                home_team_score = spans[1].text
-                away_team = spans[4].text
-                away_team_score = spans[3].text
+                away_team = spans[0].text
+                away_team_score = spans[1].text
+                home_team = spans[4].text
+                home_team_score = spans[3].text
             if len(spans) == 3:
                 home_team = spans[0].text
                 away_team = spans[2].text
