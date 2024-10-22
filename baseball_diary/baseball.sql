@@ -19,6 +19,8 @@ CREATE TABLE tb_mem (
 );
 --DROP TABLE tb_mem;
 SELECT * FROM tb_mem;
+--DELETE tb_mem WHERE mem_id='admin';
+UPDATE tb_mem SET kbo_team = 'ALL' WHERE mem_id='admin';
 
 SELECT mem_id
      , mem_nm
@@ -103,7 +105,7 @@ SELECT VALIDATE_CONVERSION('2024-09-30' AS DATE, 'YYYY-MM-DD')
   FROM DUAL;
 
 SELECT *
-FROM tb_kbo;
+FROM tb_kbo
 WHERE TO_CHAR(game_day,'YYYY-MM-DD') = '2024-03-23';
 
 commit;
@@ -112,6 +114,65 @@ INSERT INTO tb_kbo(game_day, home_team, home_team_score
                 ,away_team, away_team_score, game_space, game_note)
 VALUES(?, ?, ?, ?, ?, ?, ?, ?);
 */
+
+
+
+CREATE TABLE tb_game
+AS
+SELECT game_day
+    ,  yymm as gamedate
+    ,  home as hcode
+    ,  away_team
+    ,  home_team
+    ,  home_team_score
+    ,  game_space
+    ,  game_note
+FROM (
+  SELECT     game_day
+            ,TO_CHAR(game_day,'YYYYMMDD') as yymm
+            ,CASE WHEN away_team = 'LG' THEN 'LG'
+                  WHEN away_team = 'KT' THEN 'KT'
+                  WHEN away_team = 'SSG' THEN 'SK'
+                  WHEN away_team = 'NC' THEN 'NC'
+                  WHEN away_team = '두산' THEN 'OB'
+                  WHEN away_team = 'KIA' THEN 'HT'
+                  WHEN away_team = '롯데' THEN 'LT'
+                  WHEN away_team = '삼성' THEN 'SS'
+                  WHEN away_team = '한화' THEN 'HH'
+                  WHEN away_team = '키움' THEN 'WO'
+              END as away
+             ,CASE WHEN home_team = 'LG' THEN 'LG'
+                  WHEN home_team = 'KT' THEN 'KT'
+                  WHEN home_team = 'SSG' THEN 'SK'
+                  WHEN home_team = 'NC' THEN 'NC'
+                  WHEN home_team = '두산' THEN 'OB'
+                  WHEN home_team = 'KIA' THEN 'HT'
+                  WHEN home_team = '롯데' THEN 'LT'
+                  WHEN home_team = '삼성' THEN 'SS'
+                  WHEN home_team = '한화' THEN 'HH'
+                  WHEN home_team = '키움' THEN 'WO'
+             END as home
+             , TO_CHAR(game_day,'YYYY') AS yy
+            ,away_team
+            ,away_team_score
+            ,home_team
+            ,home_team_score
+            ,game_space
+            ,game_note
+            ,CASE WHEN COUNT(*) OVER(PARTITION BY away_team||home_team) >1 THEN TO_CHAR(ROW_NUMBER() OVER(PARTITION BY away_team||home_team ORDER BY game_day ASC))  
+             ELSE '0' END  as cnt
+   FROM tb_kbo
+   ORDER BY game_day
+   );
+--DROP TABLE tb_game;
+ALTER TABLE tb_game ADD CONSTRAINT pk_game PRIMARY KEY(game_day, hcode);
+ALTER TABLE tb_game ADD CONSTRAINT fk_game 
+FOREIGN KEY(game_day, home_team) REFERENCES tb_kbo(game_day, home_team);
+
+SELECT * 
+FROM tb_game
+WHERE TO_CHAR(game_day,'YYYY-MM-DD') = '2024-09-28';
+WHERE code='20240928HTLT02024';
 
 /*
     다이어리 데이터 테이블
@@ -122,7 +183,7 @@ CREATE TABLE tb_diary (
      mem_id VARCHAR2(50)
     ,diary_no NUMBER GENERATED ALWAYS AS IDENTITY -- 자동 증가 컬럼
     ,game_day DATE
-    ,home_team VARCHAR2(20)
+    ,code VARCHAR2(100)
     ,diary_title VARCHAR2(1000)
     ,diary_content VARCHAR2(4000)
     ,use_yn VARCHAR2(1) DEFAULT 'Y'
@@ -131,39 +192,46 @@ CREATE TABLE tb_diary (
 );
 --DROP TABLE tb_diary;
 ALTER TABLE tb_diary ADD CONSTRAINT fk_diary FOREIGN KEY(mem_id) REFERENCES tb_mem (mem_id);
-ALTER TABLE tb_diary ADD CONSTRAINT fk2_diary 
-FOREIGN KEY(game_day, home_team) REFERENCES tb_kbo(game_day, home_team);
+--ALTER TABLE tb_diary ADD CONSTRAINT fk2_diary 
+--FOREIGN KEY(game_day, hcode) REFERENCES tb_game(game_day, hcode);
 
-INSERT INTO tb_diary(mem_id, game_day, home_team, diary_title, diary_content)
-VALUES ('admin', TO_DATE('2024.09.28 17:00', 'YYYY.MM.DD HH24:MI'), '롯데', '테스트', '테스트 글입니다.');
-INSERT INTO tb_diary(mem_id, game_day, home_team, diary_title, diary_content)
-VALUES ('admin', TO_DATE('2024-09-30 18:30', 'YYYY-MM-DD HH24:MI'), 'KIA', '0930제목', '0930내용');
+INSERT INTO tb_diary(mem_id, game_day, code, diary_title, diary_content)
+VALUES ('admin', TO_DATE('2024.09.28 17:00', 'YYYY.MM.DD HH24:MI'), '20240928HTLT02024', '테스트', '테스트 글입니다.');
+INSERT INTO tb_diary(mem_id, game_day, code, diary_title, diary_content)
+VALUES ('admin', TO_DATE('2024-09-30 18:30', 'YYYY-MM-DD HH24:MI'), '20240930NCHT02024', '0930제목', '0930내용');
 
 SELECT * FROM tb_diary;
 
+-- 다이어리 목록 조회
 SELECT b.mem_id
      , a.diary_no
      , a.game_day
      , a.diary_title
---     , a.diary_content
+     , a.create_dt
      , a.update_dt
 FROM tb_diary a, tb_mem b
 WHERE a.mem_id = b.mem_id
 AND   a.use_yn = 'Y'
 AND   b.mem_id = 'admin';
 
+-- 다이어리 내용 조회
 SELECT b.mem_id
      , a.diary_no
      , a.game_day
+     , a.code
      , a.diary_title
      , a.diary_content
      , a.update_dt
-FROM tb_diary a, tb_mem b, tb_kbo c
+FROM tb_diary a, tb_mem b
 WHERE a.mem_id = b.mem_id
-AND   a.game_day = c.game_day
-AND   a.home_team = c.home_team
 AND   a.use_yn = 'Y'
 AND   b.mem_id = 'admin';
+
+-- 다이어리 수정
+UPDATE tb_diary
+SET diary_title = 'bbbb'
+   ,diary_content = 'bbbb'
+WHERE diary_no = 3;
 
 --DELETE tb_diary WHERE diary_no = 21;
 
@@ -206,6 +274,7 @@ commit;
     
 SELECT game_day
     ,  yymm || away ||home || cnt || yy  as code
+    ,  home as hcode
     ,  away_team
     ,  home_team
     ,  home_team_score
