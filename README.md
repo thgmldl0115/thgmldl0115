@@ -20,7 +20,7 @@ Here are some ideas to get you started:
 
   [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=thgmldl0115)](https://github.com/anuraghazra/github-readme-stats) 
   [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=thgmldl0115)](https://github.com/anuraghazra/github-readme-stats) <br>
-  [![GitHub Streak](https://streak-stats.demolab.com/?user=thgmldl0115)](https://git.io/streak-stats)
+  [![GitHub Streak](https://streak-stats.demolab.com/?user=thgmldl0115&locale=ko)](https://git.io/streak-stats)
 
   <br>
 
