@@ -242,9 +242,19 @@ pip install plotly
 - 해야할일 : 개인프로젝트 발표 준비
 - 그래프 출력할 html 만들기
 - 수면 데이터 생성
-- 기획서 마무리 수정
+- 기획서 마무리 수정r
+
+**24일 :**
+- oracle 덤프파일 생성 (october)
+- flask - dashboard 템플릿 적용
+- dashboard에 그래프 출력 (highchart)
+- python github 연동 (october)
+<br><br>
+- error modal, validation, 회원탈퇴
+- 발표 ppt 제작 ing
 
 **25일 :** &nbsp; 개인프로젝트 발표
+- 오전 : 개인프로젝트 db 덤프파일생성 + 1차 프로젝트 제출
 
 **26일 :** &nbsp; 15:00 해커톤 3차 멘토링
 
