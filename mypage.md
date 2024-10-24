@@ -248,7 +248,7 @@ pip install plotly
 - oracle 덤프파일 생성 (october)
 - flask - dashboard 템플릿 적용
 - dashboard에 그래프 출력 (highchart)
-- python github 연동 (october)
+- python github 연동 (pythonOctober)
 <br><br>
 - error modal, validation, 회원탈퇴
 - 발표 ppt 제작 ing
