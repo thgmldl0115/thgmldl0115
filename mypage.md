@@ -211,7 +211,7 @@ pip install plotly
 - 다이어리 테이블 생성
 - 다이어리 목록 화면
 - 다이어리 작성 화면 ing
-- sqld ch1 2회독 완료료
+- sqld (~72p) 2회독
 
 **20일 :**
 - 크롤링할때 홈-원정 바꿔서 받은걸 이제알음...아슬퍼
@@ -280,8 +280,12 @@ pip install plotly
 - https://www.mtnews.net/news/articleView.html?idxno=11597
 - 오전 : AWS 계정생성
 - 오후 : flask-ollama
+- sqld (~222p) 2회독
 
 **31일 :** &nbsp; 입사지원서 제출
+- 행정실에 입사지원서 문의
+- React Native설치
+- 아두이노 <-> RN 연결
 
 **독서 목록**
  - 채식주의자 (한강)
