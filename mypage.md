@@ -277,6 +277,7 @@ pip install plotly
 
 **30일 :**
 - https://www.molit.go.kr/newdeal/sub/sub_1_1.jsp
+- https://www.mtnews.net/news/articleView.html?idxno=11597
 - 오전 : AWS 계정생성
 - 오후 : flask-ollama
 
