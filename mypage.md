@@ -275,6 +275,11 @@ pip install plotly
 - 스프링부트 시작
 - 비지도학습
 
+**30일 :**
+- https://www.molit.go.kr/newdeal/sub/sub_1_1.jsp
+- 오전 : AWS 계정생성
+- 오후 : flask-ollama
+
 **31일 :** &nbsp; 입사지원서 제출
 
 **독서 목록**
