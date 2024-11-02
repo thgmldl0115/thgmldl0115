@@ -16,7 +16,7 @@ Here are some ideas to get you started:
 -->
 
 <div align="center">  
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=f1d1d2&height=230&section=header&text=sohee%20lee&fontSize=70" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=e88291&height=230&section=header&text=Sohee%20Lee&fontSize=70&fontColor=ffffff" />
 
   [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=thgmldl0115)](https://github.com/anuraghazra/github-readme-stats) 
   [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=thgmldl0115&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats) <br>
@@ -40,7 +40,7 @@ Here are some ideas to get you started:
 
 
 
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=f1d1d2&height=230&section=footer&text=&fontSize=" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=e88291&height=230&section=footer&text=&fontSize=" />
 </div>
   
 
