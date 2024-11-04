@@ -22,6 +22,8 @@ Here are some ideas to get you started:
   [![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=thgmldl0115&count_private=true&show_icons=true)](https://github.com/anuraghazra/github-readme-stats) <br>
   [![GitHub Streak](https://streak-stats.demolab.com/?user=thgmldl0115&locale=ko)](https://git.io/streak-stats)
 
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=thgmldl0115&theme=github" alt="Boom0704's Activity Graph" width=80%/>
+
   <br>
 
 
