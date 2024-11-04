@@ -19,7 +19,7 @@ Here are some ideas to get you started:
   <img src="https://capsule-render.vercel.app/api?type=waving&color=e88291&height=230&section=header&text=Sohee%20Lee&fontSize=70&fontColor=ffffff" />
   
   <img height="180em" src="https://github-readme-streak-stats.herokuapp.com/?user=thgmldl0115&theme=blood"> <Br>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=thgmldl0115&show_icons=true&include_all_commits=true&bg_color=f5cbd1&title_color=8f6f67&text_color=8f6f67">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=thgmldl0115&show_icons=true&include_all_commits=true&bg_color=f5cbd1&title_color=8f6f67&text_color=8f6f67&icon_color=8f6f67">
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=thgmldl0115&layout=compact&bg_color=f5cbd1&title_color=8f6f67&text_color=8f6f67">
   
 
